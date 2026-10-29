@@ -1,0 +1,84 @@
+/* VolexStudio mobile repair layer. Loaded last to protect narrow screens. */
+html { width: 100%; max-width: 100%; overflow-x: clip; }
+body { width: 100%; min-width: 0; max-width: 100%; overflow-x: clip; }
+main, header, footer, section, .shell, .nav, .hero-grid, .about-wrap, .section-head,
+.filter-row, .product-grid, .team-grid, .cta-inner, .modal, .workspace-content { min-width: 0; }
+img, svg, video, canvas { max-width: 100%; }
+button, a, input, select, textarea { touch-action: manipulation; }
+
+/* Long account names, product names and imported staff details must not widen the page. */
+.brand, .nav-actions, .product-top, .product-bottom, .team-card, .admin-item,
+.admin-actions, .workspace-tabs, .footer-links { min-width: 0; }
+.brand { flex-shrink: 0; }
+.product-top > *, .admin-item > *, .team-card > *, .footer-inner > * { min-width: 0; }
+.admin-item > div:first-child { overflow-wrap: anywhere; }
+.admin-actions .button, .admin-actions select { max-width: 100%; }
+
+@media (max-width: 680px) {
+  .shell { width: calc(100% - 28px); }
+  .nav { gap: 8px; }
+  .nav-actions { margin-left: auto; }
+  .nav-actions #accountButton { max-width: 38vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .nav-actions #workspaceButton { max-width: 42vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .nav-links { z-index: 30; max-height: calc(100dvh - 70px); overflow-y: auto; }
+  .hero-art { width: 100%; min-height: clamp(275px, 78vw, 350px); }
+  .orbit-tag { max-width: 45%; padding: 8px 10px; font-size: .72rem; }
+  .hero-meta > div { flex: 1 1 28%; min-width: 90px; }
+  .section-head { align-items: start; }
+  .filters { gap: 7px; }
+  .filter { max-width: 100%; padding: 8px 10px; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .product-info { min-width: 0; }
+  .product-info h3 { overflow-wrap: anywhere; }
+  .product-info p { overflow-wrap: anywhere; }
+  .product-bottom .button { white-space: normal; }
+  .team-card { padding: 14px; }
+  .modal-backdrop { padding: 12px; align-items: flex-start; overflow-y: auto; }
+  .modal { width: 100%; max-width: 560px; max-height: calc(100dvh - 24px); overflow-y: auto; margin: auto; }
+  .modal.wide { max-width: 100%; }
+  .modal-head { gap: 10px; }
+  .modal-head h2 { overflow-wrap: anywhere; }
+  .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .field, .field.full { min-width: 0; grid-column: 1 / -1; }
+  .field input, .field textarea, .field select, .control { width: 100%; min-width: 0; }
+  .form-actions { flex-wrap: wrap; }
+  .form-actions > * { max-width: 100%; }
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-item { width: 100%; align-items: stretch; }
+  .admin-actions { width: 100%; justify-content: flex-start; }
+  .admin-actions .button { flex: 0 1 auto; }
+  .workspace-tabs { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 10px; scrollbar-width: thin; }
+  .workspace-tab { flex: 0 0 auto; white-space: nowrap; }
+  .toast { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); max-width: calc(100% - 24px); }
+}
+
+@media (max-width: 420px) {
+  .shell { width: calc(100% - 24px); }
+  .brand { gap: 7px; font-size: 1.05rem; letter-spacing: -.7px; }
+  .brand-mark { width: 30px; height: 30px; border-radius: 10px; }
+  .nav-actions .button { padding: 8px 9px; font-size: .76rem; }
+  .hero h1 { font-size: clamp(2.65rem, 14vw, 4rem); }
+  .hero-meta { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .hero-meta > div:last-child { grid-column: 1 / -1; }
+  .product-grid { grid-template-columns: minmax(0, 1fr); }
+  .product-info p { min-height: 0; }
+  .product-bottom { flex-direction: row; align-items: center; }
+  .product-bottom .button { width: auto; }
+  .team-card { gap: 11px; }
+  .avatar { width: 48px; height: 48px; border-radius: 14px; }
+  .cta-inner { padding: 26px 20px; }
+  .footer-links { gap: 12px; }
+  .modal { padding: 17px; border-radius: 17px; }
+  .stat { padding: 12px; }
+  .stat strong { font-size: 1.45rem; }
+}
+
+@media (max-width: 340px) {
+  .nav-actions #accountButton { max-width: 30vw; }
+  .nav-actions #workspaceButton { max-width: 33vw; }
+  .nav-actions .button { padding-inline: 7px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .button { width: 100%; }
+  .stat-grid { grid-template-columns: minmax(0, 1fr); }
+  .product-bottom { flex-wrap: wrap; }
+}

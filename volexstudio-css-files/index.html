@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101014">
+  <meta name="description" content="VolexStudio — original art, anime-inspired commissions, portraits and colour studies.">
+  <title>VolexStudio — Art, made personal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./polish.css">
+  <link rel="stylesheet" href="./mobile-fix.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="#home" aria-label="VolexStudio home"><span class="brand-mark">V</span><span>Volex<em>Studio</em></span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#work">Artwork</a><a href="#about">About</a><a href="#team">Team</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="button small subtle" id="accountButton" type="button">Sign in</button>
+        <button class="button small primary" id="workspaceButton" type="button" hidden>My workspace</button>
+        <button class="button small mobile-menu" id="mobileMenu" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">Independent art studio</div>
+          <h1>Art that feels<br><span class="stroke">like you.</span></h1>
+          <p class="hero-copy">Original artwork, anime-inspired illustrations, portraits and colour studies — made with care, one idea at a time.</p>
+          <div class="hero-actions"><a class="button primary" href="#work">Explore artwork <span aria-hidden="true">↗</span></a><a class="button" href="#contact">Ask about a commission</a></div>
+          <div class="hero-meta"><div><strong>Made to order</strong>Personal commissions</div><div><strong>Artist-led</strong>Small creative team</div><div><strong>Tezpur, Assam</strong>India</div></div>
+        </div>
+        <div class="hero-art" aria-label="Abstract artwork illustration" role="img"><div class="art-orbit"><div class="art-core"></div><span class="spark a">✳</span><span class="spark b">✦</span><div class="orbit-tag one"><strong>Expressive</strong>by design</div><div class="orbit-tag two"><strong>Your idea</strong>our canvas</div></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="shell">
+        <div class="section-head"><div><div class="section-kicker">Selected work</div><h2>Made with imagination.</h2></div><p class="section-intro">Browse the collection and ask us about a piece or a custom idea. Final details are confirmed directly with the studio.</p></div>
+        <div class="filter-row"><div class="filters" id="productFilters"><button class="filter active" data-category="all" type="button">All work</button><button class="filter" data-category="Anime-inspired" type="button">Anime-inspired</button><button class="filter" data-category="Portraits" type="button">Portraits</button><button class="filter" data-category="Colour studies" type="button">Colour studies</button><button class="filter" data-category="Custom" type="button">Custom ideas</button></div><input class="search" id="productSearch" type="search" placeholder="Search artwork…" aria-label="Search artwork"></div>
+        <div class="product-grid" id="productGrid" aria-live="polite"><div class="empty-state">Loading artwork…</div></div>
+        <div class="status-line" id="productStatus" role="status"></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell about-wrap">
+        <div><div class="section-kicker">A little about us</div><h2>Thoughtful work.<br>Personal details.</h2></div>
+        <div class="about-panel"><div class="eyebrow">VolexStudio</div><div class="about-big">Every idea deserves its own style.</div><p class="about-text" id="aboutText">VolexStudio is an independent art studio for people who want art that feels personal. We work on anime-inspired drawings, portraits, colour work and custom concepts, with a focus on clear communication and creative detail.</p><div class="about-note">Studio base: Air Force Station Tezpur area, Assam, India. Enquiries are confirmed by our team before an order is accepted.</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="team">
+      <div class="shell"><div class="section-head"><div><div class="section-kicker">The people behind it</div><h2>Small team, big ideas.</h2></div><p class="section-intro">Meet the artists and creative team who help bring each idea to life.</p></div><div class="team-grid" id="teamGrid"><div class="empty-state">Team profiles will appear here.</div></div></div>
+    </section>
+
+    <section class="cta" id="contact"><div class="shell"><div class="cta-inner"><div><h2>Have an idea?<br>Let’s draw it out.</h2><p>Tell us what you have in mind. We’ll discuss the style, complexity and next steps before confirming anything.</p></div><a class="button dark" href="https://wa.me/919472325600" target="_blank" rel="noopener noreferrer">Contact the studio ↗</a></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><div>© <span id="yearNow"></span> VolexStudio. Made with imagination.</div><div class="footer-links"><a href="#work">Artwork</a><a href="#about">About</a><a href="https://wa.me/919472325600" target="_blank" rel="noopener noreferrer">WhatsApp</a><button class="link-button" id="footerSignIn" type="button">Account</button></div></div></footer>
+
+  <div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="modal"><div class="modal-head"><div><h2 id="authTitle">Welcome back.</h2><p id="authSubtitle">Sign in to your VolexStudio account.</p></div><button class="close-btn" data-close="authModal" type="button" aria-label="Close">×</button></div><form id="authForm"><div class="field hidden" id="authNameWrap"><label for="authName">Display name</label><input id="authName" autocomplete="name" maxlength="80"></div><div class="field"><label for="authEmail">Email address</label><input id="authEmail" type="email" required autocomplete="email" maxlength="254"></div><div class="field"><label for="authPassword">Password</label><input id="authPassword" type="password" required minlength="8" autocomplete="current-password" maxlength="128"></div><div class="form-error" id="authError" role="alert"></div><div class="form-actions"><button class="button primary" id="authSubmit" type="submit">Sign in</button><button class="link-button" id="authSwitch" type="button">Create an account</button></div></form></div></div>
+
+  <div class="modal-backdrop" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="enquiryTitle"><div class="modal"><div class="modal-head"><div><h2 id="enquiryTitle">Ask about this artwork.</h2><p>Send the studio your details. This is an enquiry, not an order confirmation.</p></div><button class="close-btn" data-close="enquiryModal" type="button" aria-label="Close">×</button></div><form id="enquiryForm"><input id="enquiryProductId" type="hidden"><div class="form-grid"><div class="field"><label for="enquiryName">Your name</label><input id="enquiryName" required autocomplete="name" maxlength="100"></div><div class="field"><label for="enquiryContact">Email or phone</label><input id="enquiryContact" required autocomplete="email" maxlength="180"></div><div class="field full"><label for="enquiryDelivery">Delivery / location (optional)</label><input id="enquiryDelivery" maxlength="220" placeholder="Town/city, or write ‘discuss later’"></div><div class="field full"><label for="enquiryMessage">What do you have in mind?</label><textarea id="enquiryMessage" required minlength="5" maxlength="3000" placeholder="Describe the artwork, style, colours or custom idea…"></textarea></div></div><div class="form-error" id="enquiryError" role="alert"></div><div class="form-actions"><button class="button primary" id="enquirySubmit" type="submit">Send enquiry</button><button class="button" data-close="enquiryModal" type="button">Cancel</button></div></form></div></div>
+
+  <div class="modal-backdrop" id="workspaceModal" role="dialog" aria-modal="true" aria-labelledby="workspaceTitle"><div class="modal wide"><div class="modal-head"><div><h2 id="workspaceTitle">Your workspace</h2><p id="workspaceSubtitle">Manage your VolexStudio account.</p></div><button class="close-btn" data-close="workspaceModal" type="button" aria-label="Close">×</button></div><div class="workspace-tabs" id="workspaceTabs"></div><div class="workspace-content" id="workspaceContent"><div class="empty-state">Loading workspace…</div></div><div class="form-actions"><button class="button" id="signOutButton" type="button">Sign out</button></div></div></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
